@@ -12,6 +12,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 
 import java.util.List;
+import org.reactnative.camera.RNCameraPackage;
+import com.github.yamill.orientation.OrientationPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,6 +29,8 @@ public class MainApplication extends Application implements ReactApplication {
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for example:
       // packages.add(new MyReactNativePackage());
+      packages.add(new RNCameraPackage());
+      packages.add(new OrientationPackage());
       return packages;
     }
 
