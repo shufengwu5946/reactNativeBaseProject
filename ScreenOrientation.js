@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 import Orientation from 'react-native-orientation';
 export default class ScreenOrientation extends Component {
   componentWillMount() {
@@ -31,7 +31,7 @@ export default class ScreenOrientation extends Component {
     Orientation.addOrientationListener(this._orientationDidChange);
   }
 
-  _orientationDidChange = orientation => {
+  _orientationDidChange = (orientation) => {
     if (orientation === 'LANDSCAPE') {
       // do something with landscape layout
       console.log('addOrientationListener', 'Landscape');

@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -43,7 +43,7 @@ import ScreenOrientation from './ScreenOrientation';
 import Modal from 'react-native-modal';
 import KeepAwake from 'react-native-keep-awake';
 import ImagePicker from 'react-native-image-picker';
-import {Avatar} from 'react-native-elements';
+import { Avatar } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 
 Icon.loadFont();
@@ -56,7 +56,7 @@ class App extends React.Component {
   };
 
   toggleModal = () => {
-    this.setState({isModalVisible: !this.state.isModalVisible});
+    this.setState({ isModalVisible: !this.state.isModalVisible });
   };
   render() {
     return (
@@ -112,7 +112,7 @@ class App extends React.Component {
             <TabViewExample />
             <SwiperComponent />
             <TextInput
-              style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+              style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
             />
 
             {/* <Progress.Bar progress={0.3} width={200} />
@@ -123,7 +123,7 @@ class App extends React.Component {
             <ScreenOrientation />
             <Button title="Show modal" onPress={this.toggleModal} />
             <Modal isVisible={this.state.isModalVisible}>
-              <View style={{flex: 1}}>
+              <View style={{ flex: 1 }}>
                 <Text>Hello!</Text>
                 <Button title="Hide modal" onPress={this.toggleModal} />
               </View>
@@ -160,14 +160,14 @@ class App extends React.Component {
                   {
                     title: 'Select Avatar',
                     customButtons: [
-                      {name: 'fb', title: 'Choose Photo from Facebook'},
+                      { name: 'fb', title: 'Choose Photo from Facebook' },
                     ],
                     storageOptions: {
                       skipBackup: true,
                       path: 'images',
                     },
                   },
-                  response => {
+                  (response) => {
                     console.log('Response = ', response);
 
                     if (response.didCancel) {
@@ -177,13 +177,13 @@ class App extends React.Component {
                     } else if (response.customButton) {
                       console.log(
                         'User tapped custom button: ',
-                        response.customButton,
+                        response.customButton
                       );
                     } else {
-                      const source = {uri: response.uri};
+                      const source = { uri: response.uri };
                       console.log('response.uri', response.uri);
                     }
-                  },
+                  }
                 );
               }}
             />
