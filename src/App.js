@@ -1,12 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -26,41 +18,47 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import ActionButton from 'react-native-action-button';
+// import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+// import Video from 'react-native-video';
 
-import Video from 'react-native-video';
-import TabViewExample from './TabViewExample';
-import SwiperComponent from './SwiperComponent';
+// import * as Progress from 'react-native-progress';
+// import Spacer from 'react-native-spacer';
+// import PhoneInput from 'react-native-phone-input';
+// import Orientation from 'react-native-orientation';
 
-import * as Progress from 'react-native-progress';
-import Spacer from 'react-native-spacer';
-import PhoneInput from 'react-native-phone-input';
-import Orientation from 'react-native-orientation';
-import ScreenOrientation from './ScreenOrientation';
 import Modal from 'react-native-modal';
-import KeepAwake from 'react-native-keep-awake';
+// import KeepAwake from 'react-native-keep-awake';
 import ImagePicker from 'react-native-image-picker';
 import { Avatar } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
+import TabViewExample from '../TabViewExample';
+import SwiperComponent from '../SwiperComponent';
+import ScreenOrientation from '../ScreenOrientation';
 
 Icon.loadFont();
 FontAwesome.loadFont();
 AntDesign.loadFont();
 
 class App extends React.Component {
-  state = {
-    isModalVisible: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isModalVisible: false,
+    };
+  }
 
   toggleModal = () => {
-    this.setState({ isModalVisible: !this.state.isModalVisible });
+    const { isModalVisible } = this.state;
+    this.setState({ isModalVisible: !isModalVisible });
   };
+
   render() {
+    const { isModalVisible } = this.state;
     return (
-      <Fragment>
+      <>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView>
           <ScrollView
@@ -122,7 +120,7 @@ class App extends React.Component {
 
             <ScreenOrientation />
             <Button title="Show modal" onPress={this.toggleModal} />
-            <Modal isVisible={this.state.isModalVisible}>
+            <Modal isVisible={isModalVisible}>
               <View style={{ flex: 1 }}>
                 <Text>Hello!</Text>
                 <Button title="Hide modal" onPress={this.toggleModal} />
@@ -201,7 +199,7 @@ class App extends React.Component {
             </LinearGradient>
           </ScrollView>
         </SafeAreaView>
-      </Fragment>
+      </>
     );
   }
 }
@@ -223,7 +221,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 24,
-    fontWeight: '600',
+    fontWeight: 'bold',
     color: Colors.black,
   },
   sectionDescription: {
@@ -238,7 +236,7 @@ const styles = StyleSheet.create({
   footer: {
     color: Colors.dark,
     fontSize: 12,
-    fontWeight: '600',
+    fontWeight: 'bold',
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
