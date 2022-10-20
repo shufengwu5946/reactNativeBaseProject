@@ -50,7 +50,7 @@
     "react-native-phone-input": "^0.2.4",
     "react-native-progress": "^3.6.0",
     "react-native-radio-buttons-group": "^1.0.7",
-    "react-native-reanimated": "^1.2.0",
+    "react-native-reanimated": "^2.10.0",
     "react-native-spacer": "^1.5.0",
     "react-native-step-indicator": "^0.0.11",
     "react-native-swipeable": "^0.6.0",
